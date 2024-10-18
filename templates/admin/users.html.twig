@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des utilisateurs{% endblock %}
+
+{% block body %}
+<section class="admin">
+    <article class="head">
+        <h1><span>F</span>OOD</h1>
+        <ul>
+            <li><a href="#">User</a></li>
+            <li><a href="{{ path('admin_new_product') }}">product</a></li>
+
+        </ul>
+        <article class="adminButton">                
+            <button>LogOut</button>
+            <button>Go to Site</button>
+        </article>
+    </article>
+
+    <article class="admin2">
+        <h1>Gestion des utilisateurs</h1>
+        <table class="adminuser">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.roles|join(', ') }}</td> {# Affichage des rôles #}
+                        <td>
+                            <a href="{{ path('admin_edit_user', {id: user.id}) }}">Modifier</a>
+                            <a href="{{ path('admin_delete_user', {id: user.id}) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?');">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        
+
+        <article class="product"> 
+            <h1>Ajouter un produit</h1>
+            <form action="">
+                <input type="text" placeholder="Titre" required>
+                <input type="file" name="img" id="image" required>
+                <input type="number" placeholder="Prix" required>
+                <textarea id="comment" name="comment" rows="8" cols="50" placeholder="Écrivez votre commentaire ici..." required></textarea>
+                <button type="submit" class="addProduct">Ajouter</button>
+            </form>
+        </article>
+
+        <h1>Produits</h1>
+       
+</section>
+{% endblock %}

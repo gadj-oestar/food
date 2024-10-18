@@ -1,0 +1,197 @@
+.admin{
+    display: flex;
+    flex-direction: row;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.head{
+    background-color: #ff4f09;
+    height: 200vh;
+    width: 15%;
+    line-height: 50px;
+}
+.head h1{
+    color: #D0FF00;
+    margin: 0;
+    padding: 20px;
+    font-size: 3rem;
+    font-family:Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid black;
+
+}
+.head h1 span{
+    color: #FF1010;
+}
+
+.head ul li{
+    list-style-type: none;
+    font-size: 2rem;
+}
+.head ul li a{
+    text-decoration: none;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.adminButton button{
+    display:flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    width: 80%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    background-color: #26B421;
+
+}
+
+/* Style pour le conteneur */
+.admin2 {
+    width: 100%;
+    padding: 20px;
+    background-color: #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin2 h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Style pour le tableau */
+.adminuser {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: #555;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: auto;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+/* Style pour les en-têtes */
+.adminuser thead th {
+    background-color: #2E8616;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Style pour les lignes de données */
+.adminuser tbody th, 
+.adminuser tbody td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style pour les lignes alternées */
+.adminuser tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style pour les boutons */
+.adminuser tbody button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.adminuser tbody button:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.adminuser tbody button:active {
+    background-color: #1e7e34;
+    color: white;
+}
+
+/* Style pour chaque colonne */
+.adminuser th, .adminuser td {
+    text-align: left;
+    padding: 12px;
+}
+
+.adminuser td button {
+    margin-right: 8px;
+}
+
+.adminuser th {
+    background-color: #e9ecef;
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 550px; /* vous pouvez ajuster cette valeur selon vos besoins */
+    margin: 0 auto;
+    background-color: #1F7C1A;
+    margin-top: 40px;
+}
+.product form input {
+    margin-top: 30px;
+    display: block;
+    width: 70%;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: #D9D9D9;
+    text-decoration: none;
+}
+
+.description{
+    padding: 30px;
+}
+
+textarea{
+    margin-left:80px;
+    margin-bottom: 20px;
+}
+
+input[type="file"]{
+    background-color: #e9ecef;
+}
+.addProduct{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+
+/* Style pour le conteneur du formulaire */
+.user-edit-section {
+    margin: 20px auto;
+    width: 60%;
+    background-color: #fdfdfd;
+    padding: 20px;
+ 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+

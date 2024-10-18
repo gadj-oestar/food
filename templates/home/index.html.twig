@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits{% endblock %}
+
+{% block body %}
+    <header>
+        <section class="headhome">
+            <article>
+                <h1 class="title"><span>F</span>OOD</h1>
+            </article>
+            <article class="recherche">
+                <form action="">
+                    <input type="text" placeholder="Recherche...">
+                    <button type="submit"><img src="{{ asset('img/loop.png') }}" alt="search"></button>
+                </form>
+             <button class="shop">
+    <a href="{{ path('cart_index') }}">
+        <img src="{{ asset('img/shop.png') }}" alt="shop">
+    </a>
+</button>
+            </article>
+        </section>
+        <section class="head1">
+            <article>
+                <h2>WELCOME TO La casa del Placer</h2>
+                <button class="register"> <a href="{{ path('app_register') }}">Register</a></button>
+            </article>
+            <article class="imgburger">
+                <img src="{{ asset('img/burger.png') }}" alt="Burger Image">
+            </article>
+        </section>
+    </header>
+
+    <main>
+        <h1>Nos Produits</h1>
+        <section class="food">
+          {% for product in products %}
+    <article>
+        <h3>{{ product.title }}</h3>
+        <img src="{{ asset('uploads/images/' ~ product.image) }}" alt="{{ product.title }}">
+        <br/>
+        <span>Prix: {{ product.price }}€</span>
+         <div class="space">
+                        <!-- Lien pour ajouter au panier -->
+                        <a href="{{ path('cart_add', { id: product.id }) }}" class="add"> ajouter </a>
+                        <button class="detail"><img src="{{ asset('img/detail.png') }}" alt="detail"></button>
+                        <p class="description">{{ product.description }}</p>
+                    </div>
+    </article>
+{% else %}
+    <p>Aucun produit trouvé.</p>
+{% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Food - Tous droits réservés.</p>
+    </footer>
+{% endblock %}

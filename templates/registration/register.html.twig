@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <form action="{{ path('app_register') }}" method="POST" class="register">
+        <h1><span class="f">F</span>OOD</h1>
+        <h2>Register</h2>
+
+        {{ form_start(registrationForm) }}
+        
+        <!-- Champ email -->
+        {{ form_widget(registrationForm.email, {
+            'attr': {
+                'placeholder': 'Your email'
+            }
+        }) }}
+
+        <!-- Champ mot de passe -->
+        {{ form_widget(registrationForm.plainPassword.first, {
+            'attr': {
+                'placeholder': 'Your password',
+                'class': 'form-control'
+            }
+        }) }}
+
+        <!-- Champ confirmation mot de passe -->
+        {{ form_widget(registrationForm.plainPassword.second, {
+            'attr': {
+                'placeholder': 'Confirm your password',
+                'class': 'form-control'
+            }
+        }) }}
+
+        <button type="submit" class="btn-register">Register</button>
+
+        {{ form_end(registrationForm) }}
+    </form>
+{% endblock %}

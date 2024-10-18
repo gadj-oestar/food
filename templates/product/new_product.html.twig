@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un nouveau produit{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un produit</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.title, {
+            'attr': {'placeholder': 'Titre du produit'},
+            'label': false
+        }) }}
+
+        {{ form_row(form.price, {
+            'attr': {'placeholder': 'Prix du produit'},
+            'label': false
+        }) }}
+
+        {{ form_row(form.description, {
+            'attr': {
+                'placeholder': 'Description du produit',
+                'rows': 8,   // Agrandit le textarea
+                'cols': 50
+            },
+            'label': false
+        }) }}
+
+        {{ form_row(form.image, {
+            'label': false
+        }) }}
+
+        <button type="submit">Ajouter</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('admin_products') }}">Retour à la liste des produits</a>
+{% endblock %}

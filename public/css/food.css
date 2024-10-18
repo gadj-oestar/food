@@ -1,0 +1,289 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    color: white;
+}
+
+.headhome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headhome .title {
+    font-size: 2.5rem;
+    color: #D0FF00;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.headhome .title span {
+    color: #FF1010;
+}
+
+.headhome .recherche {
+    display: flex;
+    align-items: center;
+}
+
+.head1 {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+.head1 img {
+    width: 590px;
+    animation: bounce 3s infinite ease-in-out;
+}
+
+.head1 h2 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+.recherche input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.recherche button {
+    background-color: #786f6f;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.recherche button img {
+    width: 20px;
+}
+
+.shop {
+    background-color: transparent;
+    border: none;
+    margin-left: 15px;
+}
+
+.shop img {
+    width: 40px;
+}
+
+/* Register button */
+.register {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.register:hover {
+    background-color: #218838;
+}
+
+/* Main content */
+main {
+    padding: 40px;
+    background-color: #299829;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Food section (products grid) */
+.food {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+
+.food article h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.food article {
+    background-color: #fbeaea;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Assurer que les articles aient la même hauteur */
+}
+
+/* Fixer une taille uniforme pour toutes les images */
+.food article img {
+    width: auto; /* Prendre toute la largeur disponible */
+    height: auto; /* Fixer une hauteur spécifique */
+    object-fit: cover; /* Assurer que l'image garde ses proportions */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.food article span {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 15px;
+}
+/* Cacher la description initialement avec hauteur réduite et opacité */
+.food article .description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 0 10px;  /* Réduire le padding initial pour l'effet */
+    border-radius: 5px;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+/* Afficher progressivement la description au survol */
+.food article:hover .description {
+    max-height: 150px; /* Ajuste la hauteur selon la longueur du texte */
+    opacity: 1;
+    padding: 10px; /* Ajouter un padding pour l'effet de glissement */
+}
+
+/* Disparition du bouton au survol */
+.food article .detail {
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transition fluide */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Au survol de l'article, le bouton disparaît */
+.food article:hover .detail {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Bouton "add" inchangé */
+.add {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: #218838;
+}
+
+/* Effet sur le bouton au survol */
+.detail:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05); /* Légère mise en avant */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Transition douce pour le texte */
+.detail img {
+    width: 20px ;
+    height: 10px !important;
+    transition: opacity 0.5s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #2E8616;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+
+/* Buttons for products */
+.space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.add:hover {
+    background-color: #218838;
+}
+
+.detail {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.detail:hover {
+    background-color: #0056b3;
+}
+
+.detail img {
+    width: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2E8616;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}

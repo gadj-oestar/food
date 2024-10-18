@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un produit{% endblock %}
+
+{% block body %}
+    <article class="product"> 
+        <h1>Ajouter un produit</h1>
+
+        {{ form_start(form) }}
+            {{ form_row(form.title, {'label': false, 'attr': {'placeholder': 'Titre du produit'}}) }}
+            {{ form_row(form.image, {'label': false}) }}
+            {{ form_widget(form.price, {'attr': {'placeholder': 'Prix du produit', 'type': 'number'}}) }}
+            {{ form_row(form.description, {'label': false, 'attr': {'placeholder': 'Description du produit', 'rows': 10}}) }}
+            <button type="submit" class="addProduct">Ajouter</button>
+        {{ form_end(form) }}
+
+        <a href="{{ path('admin_products') }}">Retour à la liste des produits</a>
+    </article>
+{% endblock %}
